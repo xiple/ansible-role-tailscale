@@ -4,3 +4,9 @@
   ansible.builtin.command:
     cmd: "dnf config-manager addrepo --from-repofile={{ tailscale_repo_file_url }}"
     creates: /etc/yum.repos.d/tailscale.repo
+
+- name: Install tailscale
+  ansible.builtin.dnf:
+    name: tailscale
+    state: present
+    update_cache: true
