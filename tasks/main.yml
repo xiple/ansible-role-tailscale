@@ -10,3 +10,9 @@
     name: tailscale
     state: present
     update_cache: true
+
+- name: Make sure tailscaled service is started and enabled
+  ansible.builtin.systemd_service:
+    name: tailscaled
+    state: started
+    enabled: true
