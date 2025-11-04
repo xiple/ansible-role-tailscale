@@ -1,19 +1,11 @@
 #SPDX-License-Identifier: MIT-0
 ---
-- name: Install tailscale repository
-  ansible.builtin.command:
-    cmd: "dnf config-manager addrepo --from-repofile={{ tailscale_repo_file_url }}"
-    creates: /etc/yum.repos.d/tailscale.repo
+- include_tasks: setup-debian-13.yml
+  when:
+    - ansible_facts.distribution == 'Debian'
+    - ansible_facts.distribution_major_version | int == 13
 
-- name: Install tailscale
-  ansible.builtin.dnf:
-    name: tailscale
-    state: present
-    update_cache: true
-
-- name: Make sure tailscaled service is started and enabled
-  ansible.builtin.systemd_service:
-    name: tailscaled
-    state: started
-    enabled: true
-  ignore_errors: yes # ignore systemd issues in containers
+- include_tasks: setup-fedora-42.yml
+  when:
+    - ansible_facts.distribution == 'Fedora'
+    - ansible_facts.distribution_major_version | int == 42
