@@ -6,8 +6,14 @@
     owner: root
     group: root
 
-- name: Import tailscale RPM key
+- name: Import tailscale apt key
   ansible.builtin.get_url:
     url: "{{ debian_trixie_apt_key_url }}"
     dest: "{{ debian_trixie_apt_key_dest }}"
+    mode: "0644"
+
+- name: Add tailscale apt repo list
+  ansible.builtin.get_url:
+    url: "{{ debian_trixie_apt_repo_list_url }}"
+    dest: "{{ debian_trixie_apt_repo_list_dest }}"
     mode: "0644"
