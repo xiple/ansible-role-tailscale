@@ -1,3 +1,4 @@
+---
 - name: Ensure {{ debian_keyrings_dir }} is created
   ansible.builtin.file:
     path: "{{ debian_keyrings_dir }}"
