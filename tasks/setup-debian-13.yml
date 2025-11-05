@@ -1,0 +1,7 @@
+- name: Ensure {{ debian_keyrings_dir }} is created
+  ansible.builtin.file:
+    path: "{{ debian_keyrings_dir }}"
+    state: directory
+    mode: "0755"
+    owner: root
+    group: root
