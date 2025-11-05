@@ -17,3 +17,11 @@
     url: "{{ debian_trixie_apt_repo_list_url }}"
     dest: "{{ debian_trixie_apt_repo_list_dest }}"
     mode: "0644"
+
+- name: Install tailscale
+  ansible.builtin.apt:
+    name: 
+      - tailscale
+      - tailscale-archive-keyring
+    state: present
+    update_cache: true
