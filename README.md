@@ -3,7 +3,7 @@ Ansible role: Tailscale
 
 An ansible role that installs tailscale on Linux.
 
-Supported distribution
+Supported distributions
 ----------------
 
 This role has been been developed and tested on the following distributions :
