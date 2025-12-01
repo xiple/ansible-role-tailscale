@@ -21,7 +21,7 @@
 
 - name: Install tailscale
   ansible.builtin.apt:
-    name: 
+    name:
       - tailscale
       - tailscale-archive-keyring
     state: present
