@@ -18,8 +18,8 @@ Supported distributions
 
 This role has been been developed and tested on the following distributions :
 
-- Debian 13
-- Fedora 42
+- Debian : 13
+- Fedora : 43, 42
 
 Example Playbook
 ----------------
