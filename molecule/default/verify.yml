@@ -2,6 +2,8 @@
 - name: Verify
   hosts: molecule
   gather_facts: true
+  vars:
+    tailscale_service_manage: false
 
   tasks:
     - name: Include Debian 13 verify file

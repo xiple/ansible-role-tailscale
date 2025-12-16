@@ -13,3 +13,4 @@
     name: tailscaled
   register: service_status
   failed_when: service_status.status.UnitFileState == "disabled"
+  when: tailscale_service_manage | bool
