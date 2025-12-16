@@ -15,4 +15,4 @@
     name: tailscaled
     state: started
     enabled: true
-  failed_when: false # ignore systemd issues in containers
+  when: tailscale_service_manage | bool
