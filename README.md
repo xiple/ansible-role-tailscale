@@ -1,6 +1,8 @@
 Ansible role: Tailscale
 =========
 
+[![CI](https://github.com/xiple/ansible-role-tailscale/actions/workflows/ci.yml/badge.svg)](https://github.com/xiple/ansible-role-tailscale/actions/workflows/ci.yml)
+
 An ansible role that installs tailscale on Linux.
 
 Requirements
