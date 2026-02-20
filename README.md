@@ -13,7 +13,12 @@ None.
 Role Variables
 ----------------
 
-None.
+```yaml
+tailscale_ip_forwarding_enable: false
+tailscale_sysctl_file: "/etc/sysctl.d/99-tailscale.conf"
+```
+
+Whether to enable ip forwarding for Tailscale exit-node feature.
 
 Supported distributions
 ----------------
