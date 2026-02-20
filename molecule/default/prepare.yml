@@ -1,0 +1,10 @@
+---
+- name: Prepare
+  hosts: molecule
+  gather_facts: false
+
+  tasks:
+    - name: Install procps package
+      ansible.builtin.package:
+        name: procps
+        state: present
