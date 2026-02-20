@@ -20,3 +20,16 @@
   when:
     - ansible_facts.distribution == 'Fedora'
     - ansible_facts.distribution_major_version | int == 43
+
+- name: Enable ip forwarding for exit node
+  ansible.posix.sysctl:
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+    sysctl_set: false
+    sysctl_file: "{{ tailscale_sysctl_file }}"
+    state: present
+    reload: false
+  loop:
+    - { name: "net.ipv4.ip_forward", value: "1" }
+    - { name: "net.ipv6.conf.all.forwarding", value: "1" }
+  when: tailscale_ip_forwarding_enable | bool

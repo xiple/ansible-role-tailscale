@@ -1,3 +1,7 @@
 ---
 
 tailscale_service_manage: true
+
+# To use as an exit node
+tailscale_ip_forwarding_enable: false
+tailscale_sysctl_file: "/etc/sysctl.d/99-tailscale.conf"

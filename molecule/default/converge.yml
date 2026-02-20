@@ -3,6 +3,7 @@
   hosts: molecule
   vars:
     tailscale_service_manage: false
+    tailscale_ip_forwarding_enable: true
   gather_facts: true
   roles:
     - role: xiple.tailscale
