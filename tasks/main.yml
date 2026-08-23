@@ -8,12 +8,6 @@
     - ansible_facts.distribution == 'Debian'
     - ansible_facts.distribution_major_version | int == 13
 
-- name: Include Fedora 42 tasks
-  ansible.builtin.include_tasks: setup-fedora-42.yml
-  when:
-    - ansible_facts.distribution == 'Fedora'
-    - ansible_facts.distribution_major_version | int == 42
-
 - name: Include Fedora 43 tasks
   ansible.builtin.include_tasks: setup-fedora-43.yml
   when:
