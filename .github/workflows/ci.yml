@@ -38,6 +38,7 @@ jobs:
         distro:
           - debian13
           - fedora43
+          - fedora44
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v6
